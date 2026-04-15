@@ -33,8 +33,7 @@ public class Metodos {
         return l;
     }
 
-    public void MostrarLista(LinkedList<ObjEstudiante> l)
-    {
+    public void MostrarLista(LinkedList<ObjEstudiante> l) {
         for (ObjEstudiante o : l) {
             System.out.println("Nombre: " + o.getNombre());
             System.out.println("Carnet: " + o.getCarnet());
@@ -43,5 +42,20 @@ public class Metodos {
             System.out.println();
         }
     }
-}
 
+    public ObjEstudiante ConsultarEstudiante(int Cedula, LinkedList<ObjEstudiante> l) {
+
+        ObjEstudiante o = new ObjEstudiante();
+
+        for (ObjEstudiante c : l) {
+
+            if (c.getCedula() == Cedula) {
+                o.setCedula(Cedula);
+                o.setNombre(c.getNombre());
+                o.setCarnet(c.getCarnet());
+            }
+        }
+
+        return o;
+    }
+}
